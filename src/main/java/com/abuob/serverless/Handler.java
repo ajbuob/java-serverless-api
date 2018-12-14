@@ -1,4 +1,4 @@
-package com.serverless;
+package com.abuob.serverless;
 
 import java.util.Collections;
 import java.util.Map;
