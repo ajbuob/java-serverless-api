@@ -5,12 +5,22 @@ custom:
   region:
     production: us-east-1
     default: us-east-1
+  apigwBinary:
+    types:
+      - 'image/png'
+      - '*/*'
 
 provider:
   name: aws
   runtime: java8
   stage: ${opt:stage, 'dev'}
   region: ${self:custom.region.${self:provider.stage}, self:custom.region.default}
+
+plugins:
+  #Configure binary output for specific Content-Types.
+  - serverless-apigw-binary
+  #convert the base64 string into raw binary data before sending it through to the client
+  - serverless-apigwy-binary
 
 package:
   artifact: target/serverless-api-${self:provider.stage}.jar
@@ -23,3 +33,11 @@ functions:
           path: default
           method: get
           cors: true
+  image:
+    handler: com.abuob.serverless.image.ImageHandler
+    events:
+      - http:
+          path: image
+          method: get
+          cors: true
+          contentHandling: CONVERT_TO_BINARY
