@@ -39,7 +39,6 @@ public class ImageHandler implements RequestHandler<Map<String, Object>, ApiGate
        // LOG.info("imageStr:" + imageStr);
 
         ImmutableMap<String,String> headersMap = ImmutableMap.<String, String>builder()
-                .put("X-Powered-By", "AWS Lambda & serverless")
                 .put("Content-Type", "image/png")
                 .build();
 
