@@ -23,7 +23,7 @@ plugins:
   - serverless-apigwy-binary
 
 package:
-  artifact: target/serverless-api-${self:provider.stage}.jar
+  artifact: target/${self:service}-${self:provider.stage}.jar
 
 functions:
   default:
