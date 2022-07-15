@@ -10,7 +10,7 @@
   <properties>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    <aws.sdk.version>1.11.658</aws.sdk.version>
+    <aws.sdk.version>1.12.261</aws.sdk.version>
     <aws.sdk.log4j.version>1.1.0</aws.sdk.log4j.version>
     <guava.version>28.1-jre</guava.version>
     <log4j.version>2.11.1</log4j.version>
